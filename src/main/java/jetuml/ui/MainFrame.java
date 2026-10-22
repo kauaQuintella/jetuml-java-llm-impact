@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -87,9 +88,6 @@ public final class MainFrame extends JFrame {
 
         syncTabs();
     }
-
-    // Import needed for getComponentAt
-    private static final Class<java.awt.Component> Component = java.awt.Component.class;
 
     /**
      * Synchronises the tab pane with the current workspace state.

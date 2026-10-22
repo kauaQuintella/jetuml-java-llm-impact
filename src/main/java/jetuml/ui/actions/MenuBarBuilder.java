@@ -119,7 +119,7 @@ public final class MenuBarBuilder {
                 KeyStroke.getKeyStroke(KeyEvent.VK_B, KeyEvent.CTRL_DOWN_MASK),
                 () -> workspace.active().isPresent(), () ->
                 workspace.active().ifPresent(doc -> {
-                    new ClipboardImageService(workspace.notifications()).copyToClipboard(doc);
+                    ClipboardImageService.copy(doc, workspace.notifications());
                 })));
 
         r.register(new AppAction("file.exit", "Exit",
@@ -179,7 +179,7 @@ public final class MenuBarBuilder {
         if (fc.showSaveDialog(frame) != JFileChooser.APPROVE_OPTION) return;
         File file = fc.getSelectedFile();
         try {
-            new ImageExporter(workspace.notifications()).export(doc, file.toPath());
+            ImageExporter.forPath(file.toPath()).export(doc, file.toPath());
         } catch (Exception ex) {
             workspace.notifications().error("Export failed: " + ex.getMessage());
         }

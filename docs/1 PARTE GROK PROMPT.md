@@ -1,0 +1,1 @@
+implemente tudo o que está presente em DESING.md . Somente realize... não me pergunte nada. Vou aceitar tudo o que vier pela frente. No final fere um documento .md relatando tudo o que você executou. Se você precisou tomar alguma decisão por conta própria, relate! Quero que você faca tudo por conta própria o que está no arquivo.

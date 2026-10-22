@@ -70,6 +70,7 @@ jetuml/model/command/CompositeCommand.class
 jetuml/app/Rejected.class
 jetuml/persistence/JsonDiagramRepository.class
 jetuml/model/nodes/UseCaseNode.class
+jetuml/ui/MainFrame$1.class
 jetuml/model/Point.class
 jetuml/model/nodes/CallNode.class
 jetuml/model/PropertySet.class
@@ -109,6 +110,7 @@ jetuml/render/Grid.class
 jetuml/model/types/UseCaseDiagramType.class
 jetuml/model/edges/EdgeType$Directionality.class
 jetuml/model/edges/EdgeType.class
+jetuml/ui/DiagramCanvas$2.class
 jetuml/model/types/ObjectDiagramType.class
 jetuml/render/NodeRenderer.class
 jetuml/render/TextStyle.class
