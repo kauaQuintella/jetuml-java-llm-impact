@@ -72,6 +72,15 @@ public final class SelectionModel {
         return Optional.empty();
     }
 
+    public boolean hasSingleElement() {
+        return single().isPresent();
+    }
+
+    public void addAll(java.util.Collection<Node> nodeList, java.util.Collection<Edge> edgeList) {
+        nodes.addAll(nodeList);
+        edges.addAll(edgeList);
+    }
+
     public List<Element> all() {
         java.util.ArrayList<Element> all = new java.util.ArrayList<>();
         all.addAll(nodes);

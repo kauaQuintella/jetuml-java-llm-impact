@@ -5,7 +5,7 @@ public record TextStyle(int size, boolean bold, boolean italic, boolean underlin
         return new TextStyle(size, false, false, false);
     }
 
-    public TextStyle bold() {
+    public TextStyle withBold() {
         return new TextStyle(size, true, italic, underline);
     }
 }

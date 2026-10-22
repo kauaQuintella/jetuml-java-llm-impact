@@ -71,7 +71,7 @@ public final class NodeRenderers {
         @Override
         public Rect bounds(ClassNode node, Surface surface) {
             TextStyle st = TextStyle.regular(12);
-            Size name = surface.measure(prop(node, "name", "Class"), st.bold());
+            Size name = surface.measure(prop(node, "name", "Class"), st.withBold());
             Size attr = textSize(surface, prop(node, "attributes", ""), st);
             Size meth = textSize(surface, prop(node, "methods", ""), st);
             int w = Math.max(100, Math.max(name.width(), Math.max(attr.width(), meth.width())) + 20);
@@ -85,9 +85,9 @@ public final class NodeRenderers {
             box(surface, r, theme, false);
             TextStyle st = TextStyle.regular(theme.fontSize());
             String name = prop(node, "name", "Class");
-            Size ns = surface.measure(name, st.bold());
+            Size ns = surface.measure(name, st.withBold());
             surface.setColor(theme.ink());
-            surface.text(name, new Point(r.x() + (r.width() - ns.width()) / 2, r.y() + 16), st.bold());
+            surface.text(name, new Point(r.x() + (r.width() - ns.width()) / 2, r.y() + 16), st.withBold());
             int y1 = r.y() + 24;
             surface.line(new Point(r.x(), y1), new Point(r.maxX(), y1));
             drawLines(surface, r, prop(node, "attributes", ""), st, 38);
@@ -103,7 +103,7 @@ public final class NodeRenderers {
         public Rect bounds(InterfaceNode node, Surface surface) {
             TextStyle st = TextStyle.regular(12);
             Size stereo = surface.measure("«interface»", st);
-            Size name = surface.measure(prop(node, "name", "Interface"), st.bold());
+            Size name = surface.measure(prop(node, "name", "Interface"), st.withBold());
             Size meth = textSize(surface, prop(node, "methods", ""), st);
             int w = Math.max(110, Math.max(stereo.width(), Math.max(name.width(), meth.width())) + 20);
             int h = 40 + Math.max(18, meth.height());
@@ -119,8 +119,8 @@ public final class NodeRenderers {
             Size stereo = surface.measure("«interface»", st);
             surface.text("«interface»", new Point(r.x() + (r.width() - stereo.width()) / 2, r.y() + 14), st);
             String name = prop(node, "name", "Interface");
-            Size ns = surface.measure(name, st.bold());
-            surface.text(name, new Point(r.x() + (r.width() - ns.width()) / 2, r.y() + 28), st.bold());
+            Size ns = surface.measure(name, st.withBold());
+            surface.text(name, new Point(r.x() + (r.width() - ns.width()) / 2, r.y() + 28), st.withBold());
             surface.line(new Point(r.x(), r.y() + 34), new Point(r.maxX(), r.y() + 34));
             drawLines(surface, r, prop(node, "methods", ""), st, 48);
         }

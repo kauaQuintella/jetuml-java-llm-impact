@@ -100,4 +100,17 @@ public final class ElementClipboard {
     public boolean hasContent() {
         return content != null;
     }
+
+    public boolean isEmpty() {
+        return content == null;
+    }
+
+    public ClipboardContent content() {
+        return pasteClone();
+    }
+
+    /** Convenience overload matching MenuBarBuilder signature. */
+    public void copy(SelectionModel selection, Diagram diagram) {
+        copy(diagram, selection);
+    }
 }
